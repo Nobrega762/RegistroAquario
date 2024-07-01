@@ -5,8 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Atxy2k.CustomTextField.RestrictedTextField;
-import dao.Conexao;
-
 import java.awt.Toolkit;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -111,33 +109,14 @@ public class RegistroAquario extends JFrame {
 
 				}
 				
-				else{
-					try {
-						Connection conexao = new Conexao().getConnection();
-						 String ph = (String) comboBoxPh.getSelectedItem();
-	                        String amonia = (String) comboBoxAmonia.getSelectedItem();
-	                        String nitrito = (String) comboBoxNitrito.getSelectedItem();
-						String sql = "insert into dadosaquario(ph,amonia,nitrito) values(?, ?, ?) ";
-		                        PreparedStatement stmt = conexao.prepareStatement(sql);
-		                        stmt.setString(1, ph);
-		                        stmt.setString(2, amonia);
-		                        stmt.setString(3, nitrito);
-		                        stmt.execute();
-		                        
-		                        conexao.close();
-						
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-						JOptionPane.showMessageDialog(null, "Erro ao salvar o registro!");
-					}
-					
-					
-					
-					JOptionPane.showMessageDialog(null, "Registro Salvo com sucesso!");}
 				
-			}
+					
+					
+			}	
+				
 		});
+	
+		
 		btnNewButton.setBackground(new Color(255, 255, 240));
 		btnNewButton.setBounds(103, 208, 89, 23);
 		contentPane.add(btnNewButton);
