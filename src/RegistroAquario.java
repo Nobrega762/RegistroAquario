@@ -28,6 +28,14 @@ public class RegistroAquario extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JComboBox comboBoxPh;
+	private JComboBox comboBoxAmonia;
+	private JComboBox comboBoxNitrito;
+	
+	
+	//Configuração do banco de dados
+	private static final String URL = "jdbc:postgresql://localhost:5432/aquarium_db";
+	
 
 	/**
 	 * Launch the application.
@@ -83,17 +91,17 @@ public class RegistroAquario extends JFrame {
 		
 		
 		
-		JComboBox comboBoxPh = new JComboBox();
+		 comboBoxPh = new JComboBox();
 		comboBoxPh.setModel(new DefaultComboBoxModel(new String[] {"", "6.0", "6.2", "6.4", "6.6", "6.8", "7.0", "7.2", "7.4", "7.6", "7.8"}));
 		comboBoxPh.setBounds(57, 81, 75, 22);
 		contentPane.add(comboBoxPh);
 		
-		JComboBox comboBoxAmonia = new JComboBox();
+		 comboBoxAmonia = new JComboBox();
 		comboBoxAmonia.setModel(new DefaultComboBoxModel(new String[] {"", "0", "0.25", "0.50", "1.00", "2.00", "3.50", "6.50"}));
 		comboBoxAmonia.setBounds(103, 122, 75, 22);
 		contentPane.add(comboBoxAmonia);
 		
-		JComboBox comboBoxNitrito = new JComboBox();
+		 comboBoxNitrito = new JComboBox();
 		comboBoxNitrito.setModel(new DefaultComboBoxModel(new String[] {"", "0.0", "0.25", "0.5", "1.0", "1.75", "2.8"}));
 		comboBoxNitrito.setBounds(103, 164, 75, 22);
 		contentPane.add(comboBoxNitrito);
